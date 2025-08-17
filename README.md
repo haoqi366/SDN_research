@@ -45,7 +45,7 @@ https://www.right.com.cn/forum/thread-8441736-1-1.html
 这样便可以获得shell执行权限，但这个shell肯定不好用，我们需要telnet来获取更好用的shell
 注意！！！请确保你的sdn光猫没有开启Wi-Fi，Wi-Fi功能可能会导致tcp连接不稳定（鬼知道为什么，被这个问题坑了一周）
 这个时候，我们可以弄一个busybox，进而利用busybox的telnetd功能
-前往https://www.busybox.net/download ... efconfig-multiarch/下载对应架构的busybox，然后传输到光猫
+前往[busybox下载页面](https://www.busybox.net/downloads/binaries/1.26.2-defconfig-multiarch/)下载对应架构的busybox，然后传输到光猫
 怎么传输：光猫自带了tftp，ftpget，curl，u盘默认挂载点为/mnt/usb1_1（有概率挂载不上，需要手动mount）,具体的去问百度或者ai，这里不展开
 
 可以将自己的busybox放在/usr/local/或者/tmp，记得chmod 777授权，然后执行"/path/to/busybox telnetd -l /bin/sh"（一定要记得用绝对路径！）启动telnet
